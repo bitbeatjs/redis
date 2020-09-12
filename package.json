@@ -4,6 +4,15 @@
   "description": "The redis module for bitbeat.",
   "main": "./index.js",
   "typings": "./index.d.ts",
+  "keywords": [
+    "bitbeat",
+    "framework",
+    "modular",
+    "backend",
+    "minimal",
+    "redis",
+    "cache"
+  ],
   "scripts": {
     "start": "npx @bitbeat/core start",
     "build": "npx gulp default",
