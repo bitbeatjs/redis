@@ -1,5 +1,5 @@
 {
-  "name": "redis",
+  "name": "@bitbeat/redis",
   "version": "0.0.1",
   "description": "The redis module for bitbeat.",
   "main": "./index.js",
