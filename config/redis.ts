@@ -1,4 +1,4 @@
-import { Configuration } from '@bitbeat/core';
+import { Configuration, Boot } from '@bitbeat/core';
 import { RedisOptions } from 'ioredis';
 
 export default class RedisConfiguration extends Configuration {
@@ -7,11 +7,11 @@ export default class RedisConfiguration extends Configuration {
     }
 
     default: RedisOptions = {
-        port: parseInt(process.env.REDIS_PORT || '6379', 10),
-        host: process.env.REDIS_HOST || '0.0.0.0',
-        family: parseInt(process.env.REDIS_FAMILY || '4', 10),
-        password: process.env.REDIS_PASSWORD,
-        db: parseInt(process.env.REDIS_DB || '0', 10),
+        port: Boot.getEnvVar('REDIS_PORT') || 6379,
+        host: Boot.getEnvVar('REDIS_HOST') || '0.0.0.0',
+        family: Boot.getEnvVar('REDIS_FAMILY') || 4,
+        password: Boot.getEnvVar('REDIS_PASSWORD'),
+        db: Boot.getEnvVar('REDIS_DB') || 0,
         enableReadyCheck: true,
     };
 }
