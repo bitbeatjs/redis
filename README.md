@@ -13,6 +13,8 @@ import { registerBulk } from '@bitbeat/core';
 import { RedisConnector, RedisConfig } from '@bitbeat/redis';
 
 export default async () => {
+    // it does not matter if you use new Set([RedisConfig, RedisConnector]) or new Set([RedisConnector, RedisConfig]).
+    // Configuration files will always be loaded first + the priorities are the important sorter.
     await registerBulk(new Set([RedisConfig, RedisConnector]));
 };
 ```

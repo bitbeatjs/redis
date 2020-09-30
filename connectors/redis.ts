@@ -10,8 +10,9 @@ export default class RedisConnector extends Connector {
 
     constructor() {
         super();
-        this.startPriority = 100;
-        this.stopPriority = 100;
+        this.initializePriority = 10;
+        this.startPriority = 10;
+        this.stopPriority = 10;
     }
 
     async configure(): Promise<void> {
@@ -21,7 +22,7 @@ export default class RedisConnector extends Connector {
     async start(): Promise<void> {
         const config = getInstance(RedisConfiguration);
         this.runtime = new IORedis({
-            ...config?.value
+            ...config?.value,
         });
         logger.info(`${this.name} started.`);
         this.debug(`${this.name} started.`);
