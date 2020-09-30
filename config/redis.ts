@@ -1,7 +1,7 @@
 import { Configuration, Boot } from '@bitbeat/core';
 import { RedisOptions } from 'ioredis';
 
-export default class RedisConfiguration extends Configuration {
+export default class RedisConfig extends Configuration {
     constructor() {
         super();
     }
