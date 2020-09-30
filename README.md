@@ -18,3 +18,23 @@ export default async () => {
     await registerBulk(new Set([RedisConfig, RedisConnector]));
 };
 ```
+
+Example usage:
+
+```typescript
+import { getInstance, Task } from '@bitbeat/core';
+import { RedisConnector } from '@bitbeat/redis';
+
+export default class Test extends Task {
+    constructor() {
+        super();
+        this.schedule = '* * * * *';
+    }
+
+    async run(): Promise<void> {
+        // set each minute a new timestamp
+        const redis = getInstance(RedisConnector)?.runtime;
+        await redis.set('timestamp', Date.now());
+    }
+}
+```
