@@ -36,10 +36,10 @@
         "ioredis": "^4.17.3"
     },
     "peerDependencies": {
-        "@bitbeat/core": "^0.0.17"
+        "@bitbeat/core": "^0.0.18"
     },
     "devDependencies": {
-        "@bitbeat/core": "^0.0.17",
+        "@bitbeat/core": "^0.0.18",
         "@rollup/plugin-json": "^4.1.0",
         "@rollup/plugin-node-resolve": "^9.0.0",
         "@rollup/plugin-sucrase": "^3.1.0",
