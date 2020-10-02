@@ -1,4 +1,9 @@
-import { Connector, getInstance, boot, logger } from '@bitbeat/core';
+import {
+    Connector,
+    getInstance,
+    logger,
+    generateDebugger,
+} from '@bitbeat/core';
 import RedisConfiguration from '../config/redis';
 import IORedis from 'ioredis';
 import { Redis } from 'ioredis';
@@ -16,7 +21,7 @@ export default class RedisConnector extends Connector {
     }
 
     async configure(): Promise<void> {
-        this.debug = boot.generateDebugger(this.name);
+        this.debug = generateDebugger(this.name);
     }
 
     async start(): Promise<void> {
