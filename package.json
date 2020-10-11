@@ -1,6 +1,6 @@
 {
     "name": "@bitbeat/redis",
-    "version": "0.0.7",
+    "version": "0.0.8",
     "description": "The redis module for bitbeat.",
     "main": "./index.js",
     "typings": "./index.d.ts",
